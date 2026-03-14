@@ -12,7 +12,7 @@ h2{
     width: 800px;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: 2.5rem;
     margin: 30px auto;
 }
 h3{
@@ -40,28 +40,55 @@ p{
     margin: 30px auto;  
 }
 .container{
-    display: block;
-    height: auto;
+    display: flex;
+    width: 110%;
+    height: 400px;
     overflow: auto;
     border-style: solid;
     border-width: 0px;
     border-color: black;
-    align-items: center;
+    align-content: center;
     object-fit: cover;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .container img{
-
+    height: 100%;
     float: right;
     margin: 0 auto;
 }
 .container p, h2{
+    font-size: 100%;
+    margin: 0 auto;
+}
+.text-container, h2{
+    height: 100%;
+    background-color: aliceblue;
+    width: 1000px;
+    border-radius: 30px;
     float: left;
 }
-.container text-container{
-    background-color: aliceblue;
-}
-a: hover{
 
+a{
+    font-weight: bold;
+    text-decoration: none;
+    color: blue;
+
+}
+a:hover{
+  color: hotpink; /* Color changes to hotpink on hover */
+  text-decoration: none; /* Underline is removed on hover */
+text-decoration: underline;
+}
+.h3-container{
+    width: 90%;
+    height: 100px;
+    display: grid;
+    object-fit: cover;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin: 30px;
+    border-style: solid;
+    border-width: 0px;
+    border-color: black;
 }
