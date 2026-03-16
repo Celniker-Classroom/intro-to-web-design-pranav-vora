@@ -2,25 +2,34 @@ body{
     background-image: linear-gradient(rgb(31, 81, 255), rgb(188, 19, 254))
 }
 h1{
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 100px;
+    font-size: clamp(40px, 6vw, 100px);
     margin: 30px auto;
+    line-height: 50px;
+    font: bold;
 }
 h2{
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2.5rem;
+    font-size: clamp(25px, 2vw, 100px);
     margin: 30px auto;
+    line-height: 100px;
+    font: lighter;
 }
 h3{
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 50px;
+    font-size: clamp(25px, 2.5vw, 100px);
     margin: 30px auto; 
+    line-height: 25px;
+    font: bold;
 }
 img{
   display: inline;
@@ -33,40 +42,45 @@ img{
   border-radius: 30px;
 }
 p{
-    width: 800px;
+    max-width: 800px;
+    width: 100%;
     text-align: center;
+    margin: 0 auto;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-    margin: 30px auto;  
+    font-size: clamp(10px, 1vw, 100px);
+    line-height: 25px;
+    font: lighter;
+
 }
 .container{
     display: flex;
+    align-items: center;
     width: 110%;
-    height: 400px;
-    overflow: auto;
-    border-style: solid;
-    border-width: 0px;
-    border-color: black;
-    align-content: center;
-    object-fit: cover;
+    height: 110%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .container img{
     height: 100%;
-    float: right;
     margin: 0 auto;
 }
-.container p, h2{
-    font-size: 100%;
-    margin: 0 auto;
-}
-.text-container, h2{
-    height: 100%;
+.text-container{
+    position: relative;
+    left: 30px;
     background-color: aliceblue;
-    width: 1000px;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    border: 1px solid black;
+    border: solid;
     border-radius: 30px;
-    float: left;
+}
+
+.center-container p {
+  margin: 0; 
 }
 
 a{
@@ -76,19 +90,65 @@ a{
 
 }
 a:hover{
-  color: hotpink; /* Color changes to hotpink on hover */
-  text-decoration: none; /* Underline is removed on hover */
-text-decoration: underline;
+  color: hotpink; 
+  text-decoration: none; 
+  text-decoration: underline;
 }
 .h3-container{
     width: 90%;
     height: 100px;
     display: grid;
-    object-fit: cover;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center; 
+    align-items: center; 
     margin: 30px;
-    border-style: solid;
-    border-width: 0px;
-    border-color: black;
+}
+
+@media (max-width: 1200px){
+    .container{
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .text-container{
+        width: 60%;
+        left: 0;
+    }
+
+    img{
+        width: 35%;
+    }
+}
+
+@media (max-width: 992px){
+    .container{
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .text-container{
+        width: 90%;
+        left: 0;
+    }
+
+    img{
+        width: 60%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px){
+    h1{
+        margin: 15px auto;
+    }
+
+    .text-container{
+        width: 95%;
+        padding: 10px;
+    }
+
+    img{
+        width: 80%;
+    }
 }
